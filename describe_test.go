@@ -45,7 +45,7 @@ func TestDescribe(t *testing.T) {
 	number = ChosenNumber(3.0)
 	describer = number
 	value = describer.Describe()
-        if value != "Fizz" {
+  if value != "Fizz" {
 		t.Errorf("Expected Fizz, got %v\n", value)
 	}
 	number = ChosenNumber(5.0)
