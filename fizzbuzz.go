@@ -1,4 +1,4 @@
-package fizzbuzz
+package main
 
 import (
 	"os"
@@ -7,9 +7,21 @@ import (
 )
 
 func main() {
-    f, _ := strconv.ParseFloat(os.Args[1], 64)
+    if len(os.Args) > 1 {
+      f, _ := strconv.ParseFloat(os.Args[1], 64)
+      numberToOutput(f)
+      } else {
+
+	      for number := 1.0; number <= 100; number++ {
+		      numberToOutput(number)
+	      }
+      }
+      
+}
+
+func numberToOutput(number float64) {
     var describer Describer
-    describer = ChosenNumber(f) 
-    result := describer.Describe()
-    fmt.Println(result)
+	describer = ChosenNumber(number)
+	result := describer.Describe()
+	fmt.Println(result)
 }
